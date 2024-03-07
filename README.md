@@ -1,7 +1,6 @@
-<H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+<H3>NAME: GRACIA RAVI R</H3>
+<H3>REG NO: 212222040047</H3>
 <H3>EX. NO.1</H3>
-<H3>DATE</H3>
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
 
 ## AIM:
@@ -37,11 +36,86 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
-TYPE YOUR CODE HERE
+```
+#import libraries
 
+import pandas as pd
+import io
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+
+#Read the dataset from drive
+d=pd.read_csv("Churn_Modelling.csv")
+# Finding Missing Values
+print(d.isnull().sum())
+
+#Check for Duplicates
+print(d.duplicated().sum())
+
+#Detect Outliers
+plt.figure(figsize=(6,4))
+sns.scatterplot(x='Age', y='Exited', data=d)
+plt.title('Scatter plot of Age vs. Exited')
+plt.show()
+
+#Normalize the dataset
+# Create an instance of MinMaxScaler
+scaler = MinMaxScaler()
+
+# Define the columns to be normalized
+columns = ['CreditScore', 'Age', 'Tenure', 'Balance', 'NumOfProducts', 'EstimatedSalary']
+
+# Normalize the specified columns
+d[columns] = scaler.fit_transform(d[columns])
+
+# Display the normalized dataset
+print("NORMALIZED DATASET\n",d)
+
+#split the dataset into input and output
+X = d.iloc[:,:-1].values
+print("INPUT(X)\n",X)
+y = d.iloc[:,-1].values
+print("OUTPUT(y)\n",y)
+
+#splitting the data for training & Testing
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+print("X_train\n")
+print(X_train)
+print("\nLenght of X_train ",len(X_train))
+print("\nX_test\n")
+print(X_test)
+print("\nLenght of X_test ",len(X_test))
+```
 
 ## OUTPUT:
-SHOW YOUR OUTPUT HERE
+### Missing Values:
+
+![out1](https://github.com/gracia55/Ex-1-NN/assets/129026838/de3c21d1-644a-4c0f-97e3-48b4687ed861)
+
+
+### Duplicates:
+
+![out2](https://github.com/gracia55/Ex-1-NN/assets/129026838/0d01bbbc-d91e-4b91-8810-1b6e0e5c0dd5)
+
+### Outliers
+
+![out3](https://github.com/gracia55/Ex-1-NN/assets/129026838/e8fe5f85-ea28-4408-90b2-aab4981356e8)
+
+
+### Normalized dataset:
+![nnop4](https://github.com/abinayasangeetha/Ex-1-NN/assets/119393675/532663fb-a7ee-4bbf-a15c-b6f4af0a16f3)
+
+### Input and Output
+![nnop5](https://github.com/abinayasangeetha/Ex-1-NN/assets/119393675/0d376d0c-a24c-4334-ab39-0baf135c530e)
+
+### Training and Testing data:
+![nnop6](https://github.com/abinayasangeetha/Ex-1-NN/assets/119393675/89d83afe-f3d5-40cd-9839-c368e0520776)
+
+
 
 
 ## RESULT:
