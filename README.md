@@ -107,13 +107,16 @@ print("\nLenght of X_test ",len(X_test))
 
 
 ### Normalized dataset:
-![nnop4](https://github.com/abinayasangeetha/Ex-1-NN/assets/119393675/532663fb-a7ee-4bbf-a15c-b6f4af0a16f3)
+![out4](https://github.com/gracia55/Ex-1-NN/assets/129026838/797768b7-8726-4fd2-a13a-9e85db6467fc)
+
 
 ### Input and Output
-![nnop5](https://github.com/abinayasangeetha/Ex-1-NN/assets/119393675/0d376d0c-a24c-4334-ab39-0baf135c530e)
+![out5](https://github.com/gracia55/Ex-1-NN/assets/129026838/95f8d91c-6f38-47a4-9adb-4e087d28c2f5)
+
 
 ### Training and Testing data:
-![nnop6](https://github.com/abinayasangeetha/Ex-1-NN/assets/119393675/89d83afe-f3d5-40cd-9839-c368e0520776)
+
+![out6](https://github.com/gracia55/Ex-1-NN/assets/129026838/5a69d1fa-5d10-4dae-a7ac-fcd090dfa38e)
 
 
 
